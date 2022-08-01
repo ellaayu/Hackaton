@@ -4,6 +4,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import webbrowser
 from streamlit_option_menu import option_menu
+from PIL import Image
 
 # 1. as sidebar menu
 # with st.sidebar:
@@ -24,28 +25,72 @@ selected = option_menu(None, ["Phising", "Linux Password", "SUDO", 'SSH'],
     menu_icon="cast", default_index=0, orientation="horizontal")
 selected
 if selected=="Phising":
+    image = Image.open('././src/img/phishing-1.jpg')
+    st.image(image, caption='')
+
     st.title("Phising")
 
     st.markdown('''
 
     - [Apa itu Phising](#section-1)
-    - [Apa Bahaya Phising](#section-2)
+    - [Bagaimana menghindari Phising](#section-2)
     ''', unsafe_allow_html=True)
 
     st.header('Apa itu Phising')
     st.write('''
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Amet mauris commodo quis imperdiet. In metus vulputate eu scelerisque. Facilisis gravida neque convallis a cras semper. Quis vel eros donec ac odio. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Vitae et leo duis ut. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Scelerisque varius morbi enim nunc faucibus a. Eget velit aliquet sagittis id consectetur purus ut. Massa eget egestas purus viverra. Libero justo laoreet sit amet cursus sit. Nibh nisl condimentum id venenatis a condimentum vitae sapien.
-    Dictumst vestibulum rhoncus est pellentesque. Egestas sed tempus urna et pharetra pharetra. Eget est lorem ipsum dolor sit amet consectetur. Tortor pretium viverra suspendisse potenti. Diam maecenas ultricies mi eget mauris pharetra. Ultrices mi tempus imperdiet nulla. Volutpat ac tincidunt vitae semper quis. Viverra accumsan in nisl nisi scelerisque eu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Velit ut tortor pretium viverra suspendisse potenti nullam ac.
-    Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa. Nunc vel risus commodo viverra maecenas accumsan lacus. Justo donec enim diam vulputate ut pharetra. Metus aliquam eleifend mi in nulla posuere sollicitudin. Lobortis mattis aliquam faucibus purus. Massa tincidunt dui ut ornare lectus sit amet. Et molestie ac feugiat sed lectus vestibulum. Mattis ullamcorper velit sed ullamcorper. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Pulvinar sapien et ligula ullamcorper malesuada. Orci phasellus egestas tellus rutrum tellus pellentesque. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Etiam erat velit scelerisque in dictum non consectetur.
+    Phising adalah upaya untuk mendapatkan informasi data seseorang dengan teknik pengelabuan. Data yang menjadi sasaran phising adalah data pribadi (nama, usia, alamat), data akun (username dan password), dan data finansial (informasi kartu kredit, rekening).
+
+    Istilah resmi phising adalah phishing, yang berasal dari kata fishing yaitu memancing.
+
+    Kegiatan phising memang bertujuan memancing orang untuk memberikan informasi pribadi secara sukarela tanpa disadari. Padahal informasi yang dibagikan tersebut akan digunakan untuk tujuan kejahatan.
+
+    Kenapa korban mau melakukan hal itu?
+
+    Pelaku phising biasanya menampakkan diri sebagai pihak atau institusi yang berwenang. Dengan menggunakan website atau email palsu yang tampak meyakinkan, banyak orang berhasil dikelabui.
     ''')
 
-    st.header('Apa Bahaya Phising')
+    st.header('Bagaimana menghindari Phising')
     st.write('''
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Amet mauris commodo quis imperdiet. In metus vulputate eu scelerisque. Facilisis gravida neque convallis a cras semper. Quis vel eros donec ac odio. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Vitae et leo duis ut. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Scelerisque varius morbi enim nunc faucibus a. Eget velit aliquet sagittis id consectetur purus ut. Massa eget egestas purus viverra. Libero justo laoreet sit amet cursus sit. Nibh nisl condimentum id venenatis a condimentum vitae sapien.
-    Dictumst vestibulum rhoncus est pellentesque. Egestas sed tempus urna et pharetra pharetra. Eget est lorem ipsum dolor sit amet consectetur. Tortor pretium viverra suspendisse potenti. Diam maecenas ultricies mi eget mauris pharetra. Ultrices mi tempus imperdiet nulla. Volutpat ac tincidunt vitae semper quis. Viverra accumsan in nisl nisi scelerisque eu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Velit ut tortor pretium viverra suspendisse potenti nullam ac.
-    Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa. Nunc vel risus commodo viverra maecenas accumsan lacus. Justo donec enim diam vulputate ut pharetra. Metus aliquam eleifend mi in nulla posuere sollicitudin. Lobortis mattis aliquam faucibus purus. Massa tincidunt dui ut ornare lectus sit amet. Et molestie ac feugiat sed lectus vestibulum. Mattis ullamcorper velit sed ullamcorper. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Pulvinar sapien et ligula ullamcorper malesuada. Orci phasellus egestas tellus rutrum tellus pellentesque. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Etiam erat velit scelerisque in dictum non consectetur.
+    Setelah mengetahui apa itu phising dan ciri-cirinya, kali ini kita akan membahas tips menghindarinya, yaitu antara lain:
+
+    1.         Rutin Memeriksa Keamanan Gadget
+
+    Phising adalah kejahatan yang dapat menyerang seluruh aplikasi dalam gadget, termasuk aplikasi mobile banking. Jika kita suka menyimpan informasi di gadget (dalam aplikasi Note, misalnya), data ini juga akan terancam jika gadget kita terkena phising.
+
+    Oleh karena itu, lakukan pemeriksaan keamanan menyeluruh di gadget secara rutin. Cek riwayat penggunaan aplikasi, file-file aneh, dan suhu gadget setiap kali Anda punya waktu luang.
+
+    2.         Menyimpan Informasi Login dengan Hati-Hati
+
+    Tips menghindari phising selanjutnya adalah menyimpan informasi login dengan hati-hati. Kita seringkali meninggalkan info login kita di sembarang tempat, misalnya di komputer umum atau di ponsel orang lain. Anda sebaiknya menghindari ini jika tidak ingin jadi korban phising.
+
+    Selain menyimpan info login dengan hati-hati, pastikan juga untuk selalu menggunakan kata sandi unik. Jika takut kesulitan mengingat, Anda bisa menulisnya di sebuah catatan pribadi dan tidak meninggalkannya di sembarang tempat.
+
+    3.         Tidak Mengikuti Perintah Email/Pesan Teks Mencurigakan
+
+    Tips berikutnya menghindari phising adalah dengan mengabaikan seluruh email atau pesan teks mencurigakan. Dalam sehari, Anda bisa saja menerima serangan phising lebih dari beberapa kali. Sesering apapun, jangan sampai Anda melakukan perintah dari pengirim mencurigakan. Jika pengirim tersebut mengaku sebagai orang lain, coba hubungi orang aslinya.
+
+    4.         Mengakses Website dengan SSL
+
+    SSL adalah Secure Socket Layer yang dipasang di website agar pengaksesnya terlindung serangan online. Jika ingin perangkat Anda terlindung dari phising dan malware, sebaiknya hanya kunjungi website dengan SSL. Cara membedakan website SSL dengan tanpa SSL adalah dari protokol aksesnya. Website dengan SSL protokol aksesnya adalah “https://”, bukan “https://”
+
+    5.         Waspada Menerima Telpon Tidak Dikenal
+
+    Tips menghindari phising berikutnya adalah tidak menerima telpon orang asing. Kalau pun Anda harus menerima, dengarkan dulu apa kepentingan orang asing tersebut. Jika permintaannya menyangkut hal-hal privasi/meminta uang, sebaiknya Anda abaikan saja telponnya.
+
+    6.         Tidak Mudah Tergiur Hadiah yang Ditawarkan Email/Pesan Teks
+
+    Selain waspada saat menerima telpon, Anda juga sebaiknya tidak mudah tergoda oleh hadiah dari email atau pesan teks. Sebagian besar hadiah semacam itu hanyalah kedok untuk melakukan phising. Jika Anda tergiur, bukannya mendapat hadiah milyaran, Anda malah akan kehilangan banyak data berharga, termasuk data rekening.
+
+    7.         Memasang Aplikasi Pelindung Phising
+
+    Tips menghindari phising yang terakhir adalah memasang aplikasi pelindung phising dan malware. Ada banyak aplikasi semacam ini tersebar di internet, baik aplikasi ponsel atau aplikasi komputer. Oleh karena itu, pastikan aplikasi ini selalu terpasang di gadget Anda, agar gadget awet dari serangan phising maupun malware.
+
+    Nah itulah informasi singkat terkait apa itu phising, ciri-ciri, dan tips menghindarinya. Phising adalah kejahatan online yang harus diwaspadai. Apabila anda merasa mengalami hal ini, segera lakukan tindakan pencegahan dengan mengabaikannya ya! Jika pelaku phising benar-benar mengganggu, laporkan saja ke pihak berwajib di sekitar Anda.
     ''')
 if selected=="Linux Password":
+    image = Image.open('././src/img/linux.jpg')
+    st.image(image, caption='')
+
     st.title("Linux Password Policy")
     st.write('''
     Password adalah sebuah atribut yang sangat penting dalam keamanan sebuah sistem. Tidak hanya password milik system administrator, namun juga password user biasa. Apabila password user sistem dibuat sesuka hati maka besar kemungkinan penyusup akan dapat menjebol sistem melalui akun tersebut. Oleh karena itu system administrator harus dapat membuat aturan standar pembuatan password serta melakukan pengelolaan password sehingga password yang lemah tidak menjadi celah keamanan sistem
@@ -136,6 +181,9 @@ if selected=="Linux Password":
     -E = mengatur kadaluarsa akun
     ''')
 if selected=="SUDO":
+    image = Image.open('././src/img/sudo.jpg')
+    st.image(image, caption='')
+
     st.title("Hardening Super User DO (SUDO)")
 
     st.write('''
@@ -197,6 +245,9 @@ if selected=="SUDO":
     ''')
 
 if selected=="SSH":
+    image = Image.open('././src/img/ssh.jpg')
+    st.image(image, caption='')
+
     st.title("Secure Shell (SSH) Hardening")
 
     st.write('''

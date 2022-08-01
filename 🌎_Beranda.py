@@ -33,6 +33,8 @@ st.set_page_config(
 
 st.write("# Welcome to CyberBook! 👋")
 
+st.caption('“Cyber-Security is much more than a matter of IT.” ― Stephane Nappo.')
+
 components.html(
     """
     <head>
@@ -56,7 +58,7 @@ components.html(
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="https://media.suara.com/pictures/970x544/2020/05/12/29597-phising.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="https://commercial.acerid.com/assets/images/medias/20210204093324_Cybersecurity-Banner.jpg" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
@@ -64,7 +66,7 @@ components.html(
       </div>
     
       <div class="item">
-        <img src="https://media.suara.com/pictures/970x544/2020/05/12/29597-phising.jpg" alt="New york" style="width:100%;">
+        <img src="https://binus.ac.id/wp-content/uploads/2020/10/43-0-Kupas-Tuntas-Jurusan-Cyber-Security.-Belajar-Apa-Saja-sih-di-Kampus.jpg" alt="New york" style="width:100%;">
       </div>
     </div>
 
@@ -81,41 +83,41 @@ components.html(
 </div>
 
 </body>""",
-    height=400,
+    height=300,
 )
 
 st.sidebar.success("Ayo ketahui dunia Cyber!")
-image = Image.open('./src/img/phishing-1.jpg')
-with st.sidebar:
-    hello = st.image(image, caption='')
 
-st.markdown('''
-# Sections
-- [Apa itu Cyber](#section-1)
-- [Apa itu Security](#section-2)
-''', unsafe_allow_html=True)
-
-st.header('Apa itu Cyber')
+st.header('Apa itu Cyber Security?')
 st.write('''
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Amet mauris commodo quis imperdiet. In metus vulputate eu scelerisque. Facilisis gravida neque convallis a cras semper. Quis vel eros donec ac odio. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Vitae et leo duis ut. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Scelerisque varius morbi enim nunc faucibus a. Eget velit aliquet sagittis id consectetur purus ut. Massa eget egestas purus viverra. Libero justo laoreet sit amet cursus sit. Nibh nisl condimentum id venenatis a condimentum vitae sapien.
-Dictumst vestibulum rhoncus est pellentesque. Egestas sed tempus urna et pharetra pharetra. Eget est lorem ipsum dolor sit amet consectetur. Tortor pretium viverra suspendisse potenti. Diam maecenas ultricies mi eget mauris pharetra. Ultrices mi tempus imperdiet nulla. Volutpat ac tincidunt vitae semper quis. Viverra accumsan in nisl nisi scelerisque eu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Velit ut tortor pretium viverra suspendisse potenti nullam ac.
-Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa. Nunc vel risus commodo viverra maecenas accumsan lacus. Justo donec enim diam vulputate ut pharetra. Metus aliquam eleifend mi in nulla posuere sollicitudin. Lobortis mattis aliquam faucibus purus. Massa tincidunt dui ut ornare lectus sit amet. Et molestie ac feugiat sed lectus vestibulum. Mattis ullamcorper velit sed ullamcorper. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Pulvinar sapien et ligula ullamcorper malesuada. Orci phasellus egestas tellus rutrum tellus pellentesque. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Etiam erat velit scelerisque in dictum non consectetur.
+  Cyber security adalah aktivitas yang dilakukan sistem atau seseorang dalam rangka melindungi sistem komputer dari serangan. Biasanya serangan tersebut bersifat ilegal.
+
+  Jika mengacu pada International Telecommunication Unit (ITU), cyber security adalah aktivitas yang meliputi kebijakan dan konsep keamanan dan berfungsi melindungi aset organisasi.
+
+  Perlindungan dapat berupa perangkat lunak (software), aplikasi atau apa pun yang berhubungan dengan sistem komputer. Sehingga, dengan menggunakan keamanan siber, perusahaan dapat menanggulangi ancaman di sistem komputer.
+
+  Konsep Cyber Security
+  Ada tiga konsep untuk memahami cyber security yaitu confidentiality (kerahasiaan), integrity (integritas), dan availability (ketersediaan) informasi. Untuk mengetahui lebih lengkap, simak penjelasannya di bawah ini.
+
+      1. Kerahasiaan
+  Konsep yang pertama adalah kerahasiaan. Maksudnya adalah membatasi akses dan hanya diperuntukkan orang-orang tertentu. Hal ini penting dilakukan agar di kemudian hari tidak terjadi kebocoran data. Misal, hanya orang-orang tertentu yang bisa mengakses laporan keuangan. Sedangkan lainnya, tidak.
+
+  Satu hal yang penting dari kerahasiaan adalah mengaktifkan two factor authentication (2FA). Jadi, ketika hendak mengakses akun tertentu harus melewati dua proses. Pertama, masuk melalui password. Kedua, masuk melalui kode khusus yang dikirim ke piranti tertentu.
+
+      2. Integritas
+  Konsep kedua adalah integritas. Maksudnya, menyampaikan informasi yang benar, tepat, dan akurat kepada publik. Selain menyimpan informasi, perusahaan perlu menjaga data yang dimiliki pengguna. Jangan sampai hal tersebut bocor ke pihak-pihak yang tidak berkepentingan.
+
+  Cara untuk menghindari kebocoran data seperti enkripsi, tanda tangan digital, atau certificate authority (CA).
+
+      3. Ketersediaan
+  Konsep ketiga adalah siap sedia. Maksudnya, jangan sampai pelanggan kecewa dengan sistem yang Anda atau perusahaan miliki. Misal, perusahaan Anda berbasis aplikasi keuangan. TIba-tiba, aplikasi keuangan sedang macet dan tidak tertangani dalam kurun waktu tertentu. Hal ini dapat membuat pelanggan berpindah ke kompetitor.
 ''')
 
-st.header('Apa itu Security')
-st.write('''
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Amet mauris commodo quis imperdiet. In metus vulputate eu scelerisque. Facilisis gravida neque convallis a cras semper. Quis vel eros donec ac odio. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Vitae et leo duis ut. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Scelerisque varius morbi enim nunc faucibus a. Eget velit aliquet sagittis id consectetur purus ut. Massa eget egestas purus viverra. Libero justo laoreet sit amet cursus sit. Nibh nisl condimentum id venenatis a condimentum vitae sapien.
-Dictumst vestibulum rhoncus est pellentesque. Egestas sed tempus urna et pharetra pharetra. Eget est lorem ipsum dolor sit amet consectetur. Tortor pretium viverra suspendisse potenti. Diam maecenas ultricies mi eget mauris pharetra. Ultrices mi tempus imperdiet nulla. Volutpat ac tincidunt vitae semper quis. Viverra accumsan in nisl nisi scelerisque eu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Velit ut tortor pretium viverra suspendisse potenti nullam ac.
-Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Fringilla est ullamcorper eget nulla. Egestas sed tempus urna et pharetra pharetra massa massa. Nunc vel risus commodo viverra maecenas accumsan lacus. Justo donec enim diam vulputate ut pharetra. Metus aliquam eleifend mi in nulla posuere sollicitudin. Lobortis mattis aliquam faucibus purus. Massa tincidunt dui ut ornare lectus sit amet. Et molestie ac feugiat sed lectus vestibulum. Mattis ullamcorper velit sed ullamcorper. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Pulvinar sapien et ligula ullamcorper malesuada. Orci phasellus egestas tellus rutrum tellus pellentesque. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Etiam erat velit scelerisque in dictum non consectetur.
-''')
 
-st.markdown(
+st.sidebar.markdown(
     """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Kontak Kami
+    Ketahui apa saja yang dapat terjadi di dunia Cyber.
+    ### Kontak Kami 👈
     - Kirim pertanyaan di [Email kami](aaa@gmail.com)
     - Kunjungi konten kami di [Intagram](https://intagram.com)
     - Kunjungi juga [GitHub kami](https://github.com)
