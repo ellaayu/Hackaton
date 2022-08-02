@@ -2,9 +2,13 @@
 
 import streamlit as st
 import pandas as pd
+import altair as alt
+from urllib.error import URLError
+import pandas as pd
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
 from PIL import Image
+import numpy as np
 
 
 # with st.sidebar:
@@ -99,19 +103,20 @@ st.write('''
   Konsep Cyber Security
   Ada tiga konsep untuk memahami cyber security yaitu confidentiality (kerahasiaan), integrity (integritas), dan availability (ketersediaan) informasi. Untuk mengetahui lebih lengkap, simak penjelasannya di bawah ini.
 
-      1. Kerahasiaan
+  1. Kerahasiaan
   Konsep yang pertama adalah kerahasiaan. Maksudnya adalah membatasi akses dan hanya diperuntukkan orang-orang tertentu. Hal ini penting dilakukan agar di kemudian hari tidak terjadi kebocoran data. Misal, hanya orang-orang tertentu yang bisa mengakses laporan keuangan. Sedangkan lainnya, tidak.
 
   Satu hal yang penting dari kerahasiaan adalah mengaktifkan two factor authentication (2FA). Jadi, ketika hendak mengakses akun tertentu harus melewati dua proses. Pertama, masuk melalui password. Kedua, masuk melalui kode khusus yang dikirim ke piranti tertentu.
 
-      2. Integritas
+  2. Integritas
   Konsep kedua adalah integritas. Maksudnya, menyampaikan informasi yang benar, tepat, dan akurat kepada publik. Selain menyimpan informasi, perusahaan perlu menjaga data yang dimiliki pengguna. Jangan sampai hal tersebut bocor ke pihak-pihak yang tidak berkepentingan.
 
   Cara untuk menghindari kebocoran data seperti enkripsi, tanda tangan digital, atau certificate authority (CA).
 
-      3. Ketersediaan
+  3. Ketersediaan
   Konsep ketiga adalah siap sedia. Maksudnya, jangan sampai pelanggan kecewa dengan sistem yang Anda atau perusahaan miliki. Misal, perusahaan Anda berbasis aplikasi keuangan. TIba-tiba, aplikasi keuangan sedang macet dan tidak tertangani dalam kurun waktu tertentu. Hal ini dapat membuat pelanggan berpindah ke kompetitor.
 ''')
+
 
 
 st.sidebar.markdown(
@@ -123,3 +128,48 @@ st.sidebar.markdown(
     - Kunjungi juga [GitHub kami](https://github.com)
 """
 )
+
+st.header('Kerugian yang ditimbulkan Cyber Security Attack')
+
+@st.cache
+def get_UN_data():
+    AWS_BUCKET_URL = "./src/file"
+    df = pd.read_csv(AWS_BUCKET_URL + "/crime.csv")
+    return df.set_index("Crime")
+
+
+try:
+    df = get_UN_data()
+    countries = st.multiselect(
+        "", list(df.index), ["Malware", "Phising", "Serangan Berbasis Web", 
+        "Ransomware"]
+    )
+    if not countries:
+        st.error("Please select at least one country.")
+    else:
+        data = df.loc[countries]
+        data /= 1000000.0
+        st.write("### Kerugian terhadap Cyber Crime Attack (US$)", data.sort_index())
+
+        data = data.T.reset_index()
+        data = pd.melt(data, id_vars=["index"]).rename(
+            columns={"index": "year", "value": "Kerugian terhadap Cyber Crime Attack (US$)"}
+        )
+        chart = (
+            alt.Chart(data)
+            .mark_area(opacity=0.3)
+            .encode(
+                x="year:T",
+                y=alt.Y("Kerugian terhadap Cyber Crime Attack (US$):Q", stack=None),
+                color="Crime:N",
+            )
+        )
+        st.altair_chart(chart, use_container_width=True)
+except URLError as e:
+    st.error(
+        """
+        **This demo requires internet access.**
+        Connection error: %s
+    """
+        % e.reason
+    )

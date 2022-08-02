@@ -53,35 +53,35 @@ if selected=="Phising":
     st.write('''
     Setelah mengetahui apa itu phising dan ciri-cirinya, kali ini kita akan membahas tips menghindarinya, yaitu antara lain:
 
-    1.         Rutin Memeriksa Keamanan Gadget
+    1. Rutin Memeriksa Keamanan Gadget
 
     Phising adalah kejahatan yang dapat menyerang seluruh aplikasi dalam gadget, termasuk aplikasi mobile banking. Jika kita suka menyimpan informasi di gadget (dalam aplikasi Note, misalnya), data ini juga akan terancam jika gadget kita terkena phising.
 
     Oleh karena itu, lakukan pemeriksaan keamanan menyeluruh di gadget secara rutin. Cek riwayat penggunaan aplikasi, file-file aneh, dan suhu gadget setiap kali Anda punya waktu luang.
 
-    2.         Menyimpan Informasi Login dengan Hati-Hati
+    2. Menyimpan Informasi Login dengan Hati-Hati
 
     Tips menghindari phising selanjutnya adalah menyimpan informasi login dengan hati-hati. Kita seringkali meninggalkan info login kita di sembarang tempat, misalnya di komputer umum atau di ponsel orang lain. Anda sebaiknya menghindari ini jika tidak ingin jadi korban phising.
 
     Selain menyimpan info login dengan hati-hati, pastikan juga untuk selalu menggunakan kata sandi unik. Jika takut kesulitan mengingat, Anda bisa menulisnya di sebuah catatan pribadi dan tidak meninggalkannya di sembarang tempat.
 
-    3.         Tidak Mengikuti Perintah Email/Pesan Teks Mencurigakan
+    3. Tidak Mengikuti Perintah Email/Pesan Teks Mencurigakan
 
     Tips berikutnya menghindari phising adalah dengan mengabaikan seluruh email atau pesan teks mencurigakan. Dalam sehari, Anda bisa saja menerima serangan phising lebih dari beberapa kali. Sesering apapun, jangan sampai Anda melakukan perintah dari pengirim mencurigakan. Jika pengirim tersebut mengaku sebagai orang lain, coba hubungi orang aslinya.
 
-    4.         Mengakses Website dengan SSL
+    4. Mengakses Website dengan SSL
 
     SSL adalah Secure Socket Layer yang dipasang di website agar pengaksesnya terlindung serangan online. Jika ingin perangkat Anda terlindung dari phising dan malware, sebaiknya hanya kunjungi website dengan SSL. Cara membedakan website SSL dengan tanpa SSL adalah dari protokol aksesnya. Website dengan SSL protokol aksesnya adalah “https://”, bukan “https://”
 
-    5.         Waspada Menerima Telpon Tidak Dikenal
+    5. Waspada Menerima Telpon Tidak Dikenal
 
     Tips menghindari phising berikutnya adalah tidak menerima telpon orang asing. Kalau pun Anda harus menerima, dengarkan dulu apa kepentingan orang asing tersebut. Jika permintaannya menyangkut hal-hal privasi/meminta uang, sebaiknya Anda abaikan saja telponnya.
 
-    6.         Tidak Mudah Tergiur Hadiah yang Ditawarkan Email/Pesan Teks
+    6. Tidak Mudah Tergiur Hadiah yang Ditawarkan Email/Pesan Teks
 
     Selain waspada saat menerima telpon, Anda juga sebaiknya tidak mudah tergoda oleh hadiah dari email atau pesan teks. Sebagian besar hadiah semacam itu hanyalah kedok untuk melakukan phising. Jika Anda tergiur, bukannya mendapat hadiah milyaran, Anda malah akan kehilangan banyak data berharga, termasuk data rekening.
 
-    7.         Memasang Aplikasi Pelindung Phising
+    7. Memasang Aplikasi Pelindung Phising
 
     Tips menghindari phising yang terakhir adalah memasang aplikasi pelindung phising dan malware. Ada banyak aplikasi semacam ini tersebar di internet, baik aplikasi ponsel atau aplikasi komputer. Oleh karena itu, pastikan aplikasi ini selalu terpasang di gadget Anda, agar gadget awet dari serangan phising maupun malware.
 
@@ -121,16 +121,16 @@ if selected=="Linux Password":
     st.write('''
     PAM atau Pluggable Authentication Modules memungkinkan system administrator untuk menerapkan aturan kekuatan/kompleksitas password pada seluruh user. Sehingga user terpaksa membuat password yang kompleks.
 
-    sudo apt-get install libpam_cracklib
+            sudo apt-get install libpam_cracklib
     ''')
 
     st.header('Membuat Aturan Kompleksitas Password')
     st.write('''
     1. File pengaturan berada pada direktori /etc/pam.d/ dengan nama file common-password, sebelum mengubah script, buat backup file terlebih dahulu.
 
-    sudo cp /etc/pam.d/common-password /root/
+            sudo cp /etc/pam.d/common-password /root/
 
-    sudo nano /etc/pam.d/common-password
+            sudo nano /etc/pam.d/common-password
 
     2. Cari baris berikut
 
@@ -163,11 +163,11 @@ if selected=="Linux Password":
 
     1. Memeriksa masa pakai password user
 
-    chage -l <username>
+            chage -l <username>
 
     2. Administrator dapat mengatur masa pakai password menggunakan option -M
 
-    chage -M <jumlah-hari-masa-pakai> <username>
+            chage -M <jumlah-hari-masa-pakai> <username>
 
     Misalnya user sotya dapat memakai password hanya selama 30 hari, maka perintahnya
     chage -M 30 busotya
@@ -201,7 +201,7 @@ if selected=="SUDO":
     st.write('''
     Pada dasarnya sudo adalah group, sehingga apabila ingin meningkatkan hak akses seorang user menjadi sudoers, hanya perlu menambahkan user tersebut ke dalam group sudo.
 
-    sudo usermod -aG sudo username
+            sudo usermod -aG sudo username
 
     Jika berhasil, user tersebut akan dapat menggunakan sudo dengan password usernya.
     ''')
@@ -212,13 +212,13 @@ if selected=="SUDO":
 
     1. Periksa keanggotaan group sebuah user dengan perintah
 
-    groups <username>
+            groups <username>
 
     Apabila user tersebut termasuk dalam group sudo, maka besar kemungkinan ia dapat mengakses atau mengeksekusi perintah administratif sistem.
 
     2. Menghapus keanggotaan group dengan perintah
 
-    gpasswd -d <username> <group>
+            gpasswd -d <username> <group>
     Perlu diperhatikan bahwa perintah tersebut hanya dapat dijalankan oleh super user. Contoh apabila kita ingin menghaous keanggotaan user bambang dari group sudo, maka perintahnya adalah sebagai berikut:
     sudo gpasswd -d bambang sudo
     ''')
@@ -229,15 +229,15 @@ if selected=="SUDO":
 
     1. File konfigurasi sudoers dapat diakses dengan perintah
 
-    sudo visudo
+            sudo visudo
 
     2. Semisal sudoers hanya diperbolehkan mengeksekusi perintah instalasi apt-get saja maka ubah baris %sudo yang awalnya
 
-    %sudo ALL=(ALL:ALL) ALL
+            %sudo ALL=(ALL:ALL) ALL
 
     menjadi
 
-    %sudo ALL=(ALL:ALL) PASSWD : /usr/bin/apt-get
+            %sudo ALL=(ALL:ALL) PASSWD : /usr/bin/apt-get
 
     3. Simpan dan keluar
 
@@ -255,7 +255,7 @@ if selected=="SSH":
 
     1. Menginstall aplikasi ssh dengan perintah
 
-    root@debian:/# apt-get install ssh
+            root@debian:/# apt-get install ssh
 
     Tekan Y apabila ada pertanyaan konfirmasi instalasi.
 
@@ -267,7 +267,7 @@ if selected=="SSH":
 
     2. Cobalah untuk mengakses PC kelompok lain dengan perintah ssh diikuti username@alamat-ip. MISALNYA, username kelompok lain adalah putri dan alamat ip nya adalah 192.168.1.10, maka perintah yang benar adalah
 
-    root@debian:/# ssh putri@192.168.1.10
+            root@debian:/# ssh putri@192.168.1.10
 
     kemudian masukkan password user putri tersebut.
 
@@ -287,7 +287,7 @@ if selected=="SSH":
 
     1. Di PC client meremote server: buka file /etc/ssh/sshd_config dengan perintah
 
-    server@debian:/$ nano /etc/ssh/sshd_config
+            server@debian:/$ nano /etc/ssh/sshd_config
 
     2. Cari dan beri tanda pagar (#) pada parameter Port 22
 
@@ -297,7 +297,7 @@ if selected=="SSH":
 
     5. Selanjutnya restart SSH pada server
 
-    server@debian:/$ sudo systemctl restart sshd
+            server@debian:/$ sudo systemctl restart sshd
     ''')
 
     st.header('Login Tanpa Password (menggunakan public dan private key)')
@@ -306,35 +306,35 @@ if selected=="SSH":
 
     1. Di PC klien: User harus mengenerate (membentuk) pasangan public key dan private key dengan perintah
 
-    klien@debian:/$ ssh-keygen –t rsa
+            klien@debian:/$ ssh-keygen –t rsa
 
     Tampilan pada layar
 
     2. Di PC klien me-remote server: buat sebuah direktori baru bernama .ssh
 
-    klien@debian:/$ ssh server@192.168.1.10 mkdir –p .ssh
+            klien@debian:/$ ssh server@192.168.1.10 mkdir –p .ssh
 
     tampilan di layar
 
     3. Di PC client: Mengupload public key milik client ke server dengan perintah
 
-    klien@debian:/$ ssh-copy-id server@192.168.1.10
+            klien@debian:/$ ssh-copy-id server@192.168.1.10
 
     Masukkan password server untuk menyelesaikan proses.
 
     4. Selanjutnya menonaktifkan autentikasi password pada server.
 
-    server@debian:/$ sudo nano /etc/ssh/sshd_config
+            server@debian:/$ sudo nano /etc/ssh/sshd_config
 
     5. Pada file konfigurasi, cari parameter PasswordAuthentication, hilangkan tanda pagar (#) ubah opsi yes menjadi no.
 
-    PasswordAuthentication no
+            PasswordAuthentication no
 
     6. Simpan dengan menekan kombinasi tombol Ctrl+X, Y, dan Enter.
 
     7. Selanjutnya restart SSH pada server
 
-    server@debian:/$ sudo systemctl restart sshd
+            server@debian:/$ sudo systemctl restart sshd
 
     8. Di PC client: Cobalah untuk login ke server, apabila tidak diminta memasukkan password, maka login SSH tanpa menggunakan password telah berhasil.
 
@@ -347,7 +347,7 @@ if selected=="SSH":
 
     1. Di PC client meremote server: buka file /etc/ssh/sshd_config dengan perintah
 
-    server@debian:/$ nano /etc/ssh/sshd_config
+            server@debian:/$ nano /etc/ssh/sshd_config
 
     2. Arahkan kursor ke baris paling akhir, tambahkan tulisan AllowUsers diikuti nama user yang diperbolehkan meremote server, setiap nama user dipisahkan dengan spasi. Misal yang diperbolehkan meremote server adalah user bima dan arjuna, maka skripnya adalah
 
@@ -357,7 +357,7 @@ if selected=="SSH":
 
     4. Selanjutnya restart SSH pada server
 
-    server@debian:/$ sudo systemctl restart sshd
+            server@debian:/$ sudo systemctl restart sshd
 
     5. Cobalah meremote server dengan username yang tidak terdaftar!
     ''')
