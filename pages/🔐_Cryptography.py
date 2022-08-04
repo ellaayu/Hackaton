@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 import webbrowser
 from streamlit_option_menu import option_menu
 from PIL import Image
+import sklearn
 
 def caesar_encrypt(plain_text, KEY):
     ALPHABET = ' abcdefghijklmnopqrstuvwxyz'

@@ -5,6 +5,7 @@ import streamlit.components.v1 as components
 import webbrowser
 from streamlit_option_menu import option_menu
 from PIL import Image
+import sklearn
 
 # 1. as sidebar menu
 # with st.sidebar:

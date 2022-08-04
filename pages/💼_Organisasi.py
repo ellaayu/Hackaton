@@ -4,6 +4,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import webbrowser
 from streamlit_option_menu import option_menu
+import sklearn
 
 st.set_page_config(
     page_title="Organisasi",
