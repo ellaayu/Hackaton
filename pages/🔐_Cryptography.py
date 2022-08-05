@@ -38,7 +38,7 @@ def xor_encrypt(plain_text,key):
 
 
 # 2. horizontal menu
-selected = option_menu(None, ["Caesar", "ROT 13", "XOR Cipher", 'Base64'], 
+selected = option_menu(None, ["Caesar", "ROT 13"], 
     icons=['house', 'cloud-upload', "list-task", 'gear'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 #selected
