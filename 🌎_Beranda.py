@@ -3,10 +3,8 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import streamlit_option_menu
 from urllib.error import URLError
 import pandas as pd
-from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
 from PIL import Image
 import numpy as np
